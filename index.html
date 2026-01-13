@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0f19" />
+
+  <title>Impresión 3D y Personalizados | Demo Web</title>
+  <meta name="description" content="Impresión 3D y personalizados a pedido. Llaveros, tazas, mates, cosplay, carteles LED y más. Cotizá fácil por WhatsApp." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Impresión 3D y Personalizados a Pedido" />
+  <meta property="og:description" content="Convertí ideas en objetos reales. Impresión 3D, personalizados y trabajos a medida. Demo web orientada a ventas por WhatsApp." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1581091012184-7c54ab2b5d2f?q=80&w=1200&auto=format&fit=crop" />
+
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card: #12182b;
+      --accent: #00eaff;
+      --text: #e8ecf1;
+      --muted: #a0a7b4;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #111a33, var(--bg));
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      padding: 3rem 1.5rem;
+      text-align: center;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    header h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      font-size: 1.1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--accent), #00bcd4);
+      color: #000;
+      padding: 0.9rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      box-shadow: 0 0 20px rgba(0,234,255,0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 28px rgba(0,234,255,0.6);
+    }
+
+    section {
+      padding: 3rem 1.5rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: linear-gradient(180deg, #151c36, var(--card));
+      border-radius: 18px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      text-align: center;
+    }
+
+    .step {
+      background: linear-gradient(180deg, #141b33, #0f1426);
+      border-radius: 18px;
+      padding: 1.5rem;
+    }
+
+    .step span {
+      display: inline-block;
+      background: var(--accent);
+      color: #000;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      line-height: 38px;
+      font-weight: bold;
+      margin-bottom: 0.8rem;
+    }
+
+    .cta {
+      text-align: center;
+      background: linear-gradient(180deg, #111a33, #0b0f19);
+      border-radius: 24px;
+      padding: 3rem 1.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem 6rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--accent);
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 90px;
+      right: 18px;
+      background: #25d366;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+      z-index: 100;
+    }
+
+    .whatsapp-float img {
+      width: 32px;
+      height: 32px;
+    }
+
+    @media (max-width: 480px) {
+      .whatsapp-float {
+        bottom: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Impresión 3D y Personalizados a Pedido</h1>
+    <p>Convertimos tus ideas en objetos reales. Llaveros, tazas, mates, cosplay, carteles LED y mucho más. Trabajo a medida y coordinación directa por WhatsApp.</p>
+    <a class="btn" href="https://wa.me/5490000000000?text=Hola!%20Quiero%20cotizar%20un%20trabajo%20de%20impresión%203D." target="_blank">Cotizar por WhatsApp</a>
+  </header>
+
+  <section>
+    <h2 style="text-align:center; margin-bottom:2rem;">¿Qué hacemos?</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1617791160588-241658c0f566?q=80&w=800&auto=format&fit=crop" alt="Llaveros 3D">
+        <h3>Llaveritos 3D</h3>
+        <p>Diseños personalizados, nombres, logos y formas únicas.</p>
+        <a class="btn" href="https://wa.me/5490000000000?text=Hola!%20Quiero%20cotizar%20llaveritos%203D." target="_blank">Pedir por WhatsApp</a>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1581091012184-7c54ab2b5d2f?q=80&w=800&auto=format&fit=crop" alt="Tazas y mates">
+        <h3>Tazas, Mates y Vasos</h3>
+        <p>Personalizados para regalos, eventos o emprendimientos.</p>
+        <a class="btn" href="https://wa.me/5490000000000?text=Hola!%20Quiero%20cotizar%20tazas%20o%20mates%20personalizados." target="_blank">Pedir por WhatsApp</a>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1603398938378-e54eab446dde?q=80&w=800&auto=format&fit=crop" alt="Cosplay">
+        <h3>Cosplay</h3>
+        <p>Piezas, accesorios y props impresos en 3D a medida.</p>
+        <a class="btn" href="https://wa.me/5490000000000?text=Hola!%20Quiero%20cotizar%20un%20trabajo%20de%20cosplay." target="_blank">Pedir por WhatsApp</a>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1604079628040-94301bb21b91?q=80&w=800&auto=format&fit=crop" alt="Carteles LED">
+        <h3>Carteles LED</h3>
+        <p>Cartelería personalizada para negocios y eventos.</p>
+        <a class="btn" href="https://wa.me/5490000000000?text=Hola!%20Quiero%20cotizar%20un%20cartel%20LED." target="_blank">Pedir por WhatsApp</a>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1612831817470-96c2e1c9c91c?q=80&w=800&auto=format&fit=crop" alt="Personalizados">
+        <h3>Personalizados a Medida</h3>
+        <p>¿Tenés una idea? La diseñamos y la imprimimos.</p>
+        <a class="btn" href="https://wa.me/5490000000000?text=Hola!%20Tengo%20una%20idea%20para%20imprimir%20en%203D." target="_blank">Pedir por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 style="text-align:center; margin-bottom:2rem;">¿Cómo pedir?</h2>
+    <div class="steps">
+      <div class="step">
+        <span>1</span>
+        <p>Nos escribís por WhatsApp y nos contás tu idea o nos mandás una referencia.</p>
+      </div>
+      <div class="step">
+        <span>2</span>
+        <p>Te pasamos cotización y tiempos según el diseño y cantidad.</p>
+      </div>
+      <div class="step">
+        <span>3</span>
+        <p>Imprimimos tu pedido y coordinamos entrega o envío.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>¿Tenés una idea?</h2>
+    <p style="margin:1rem 0 2rem; color:var(--muted);">Escribinos y la hacemos realidad con impresión 3D.</p>
+    <a class="btn" href="https://wa.me/5490000000000?text=Hola!%20Quiero%20consultar%20por%20un%20trabajo%20de%20impresión%203D." target="_blank">Hablar por WhatsApp</a>
+  </section>
+
+  <footer>
+    <p>Demo web – Zona Caseros / GBA</p>
+    <p>Creado y diseñado por <a href="https://ciborg347.onrender.com" target="_blank">Ciborg 347</a></p>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/5490000000000?text=Hola!%20Quiero%20cotizar%20un%20trabajo%20de%20impresión%203D." target="_blank" aria-label="WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+
+</body>
+</html>
