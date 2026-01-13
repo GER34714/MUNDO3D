@@ -38,28 +38,57 @@
 
     a { color: inherit; text-decoration: none; }
 
-    header {
-      padding: 3rem 1.5rem;
+    /* ✅ HERO con background + overlay (integración visual) */
+    header.hero {
+      position: relative;
+      width: 100%;
+      padding: 3.5rem 1.5rem;
       text-align: center;
+      background-image: url("https://iili.io/f8uMxee.md.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      overflow: hidden;
+    }
+
+    header.hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      /* overlay oscuro + degradé para legibilidad */
+      background:
+        linear-gradient(180deg, rgba(11,15,25,0.86) 0%, rgba(11,15,25,0.78) 45%, rgba(11,15,25,0.92) 100%),
+        radial-gradient(circle at 20% 20%, rgba(0,234,255,0.10), transparent 55%),
+        radial-gradient(circle at 80% 30%, rgba(0,188,212,0.08), transparent 55%);
+      backdrop-filter: blur(1px);
+      -webkit-backdrop-filter: blur(1px);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
       max-width: 1100px;
-      margin: auto;
+      margin: 0 auto;
     }
 
     .logo {
       max-width: 180px;
       margin-bottom: 1.5rem;
+      filter: drop-shadow(0 10px 25px rgba(0,0,0,0.45));
     }
 
     header h1 {
       font-size: clamp(2rem, 4vw, 3rem);
       margin-bottom: 1rem;
+      text-shadow: 0 10px 30px rgba(0,0,0,0.55);
     }
 
     header p {
-      color: var(--muted);
-      max-width: 700px;
+      color: #c9d0dc;
+      max-width: 750px;
       margin: 0 auto 2rem;
       font-size: 1.1rem;
+      text-shadow: 0 10px 30px rgba(0,0,0,0.55);
     }
 
     .btn {
@@ -149,7 +178,7 @@
     /* ✅ Footer con espacio extra para que nunca lo tape el botón flotante */
     footer {
       text-align: center;
-      padding: 2rem 1rem 9rem; /* antes 6rem */
+      padding: 2rem 1rem 9rem;
       color: var(--muted);
       font-size: .9rem;
     }
@@ -159,7 +188,7 @@
     /* ✅ Botón flotante más arriba para no tapar el footer */
     .whatsapp-float {
       position: fixed;
-      bottom: 130px; /* antes 90px */
+      bottom: 130px;
       right: 18px;
       background: #25d366;
       width: 56px;
@@ -174,23 +203,25 @@
 
     .whatsapp-float img { width: 32px; height: 32px; }
 
-    /* ✅ Ajuste extra para pantallas chicas */
     @media (max-width: 480px) {
       footer { padding-bottom: 10rem; }
       .whatsapp-float { bottom: 140px; }
+      header.hero { padding: 3.2rem 1.2rem; }
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <img src="https://iili.io/f8IPat4.jpg" alt="Logo" class="logo">
-  <h1>Impresión 3D y Personalizados a Pedido</h1>
-  <p>Convertimos tus ideas en objetos reales. Llaveros, tazas, mates, cosplay, carteles LED y mucho más.</p>
-  <a class="btn" href="https://wa.me/5490000000000?text=Hola!%20Quiero%20cotizar%20un%20trabajo%20de%20impresión%203D." target="_blank">
-    Cotizar por WhatsApp
-  </a>
+<header class="hero">
+  <div class="hero-inner">
+    <img src="https://iili.io/f8IPat4.jpg" alt="Logo" class="logo">
+    <h1>Impresión 3D y Personalizados a Pedido</h1>
+    <p>Convertimos tus ideas en objetos reales. Llaveros, tazas, mates, cosplay, carteles LED y mucho más.</p>
+    <a class="btn" href="https://wa.me/5490000000000?text=Hola!%20Quiero%20cotizar%20un%20trabajo%20de%20impresión%203D." target="_blank">
+      Cotizar por WhatsApp
+    </a>
+  </div>
 </header>
 
 <section>
