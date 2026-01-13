@@ -38,57 +38,61 @@
 
     a { color: inherit; text-decoration: none; }
 
-    /* ✅ HERO con background + overlay (integración visual) */
+    /* ✅ HERO con FRANJA arriba (como pediste) */
     header.hero {
-      position: relative;
       width: 100%;
-      padding: 3.5rem 1.5rem;
       text-align: center;
+    }
+
+    .hero-banner {
+      height: 260px; /* franja */
       background-image: url("https://iili.io/f8uMxee.md.jpg");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      position: relative;
       overflow: hidden;
     }
 
-    header.hero::before {
+    .hero-banner::after {
       content: "";
       position: absolute;
       inset: 0;
-      /* overlay oscuro + degradé para legibilidad */
+      /* overlay para integrar la franja con el fondo */
       background:
-        linear-gradient(180deg, rgba(11,15,25,0.86) 0%, rgba(11,15,25,0.78) 45%, rgba(11,15,25,0.92) 100%),
-        radial-gradient(circle at 20% 20%, rgba(0,234,255,0.10), transparent 55%),
-        radial-gradient(circle at 80% 30%, rgba(0,188,212,0.08), transparent 55%);
-      backdrop-filter: blur(1px);
-      -webkit-backdrop-filter: blur(1px);
+        linear-gradient(180deg, rgba(11,15,25,0.15) 0%, rgba(11,15,25,0.55) 70%, rgba(11,15,25,0.92) 100%),
+        radial-gradient(circle at 15% 25%, rgba(0,234,255,0.12), transparent 55%),
+        radial-gradient(circle at 85% 30%, rgba(0,188,212,0.10), transparent 55%);
     }
 
     .hero-inner {
-      position: relative;
-      z-index: 1;
       max-width: 1100px;
       margin: 0 auto;
+      padding: 2.2rem 1.5rem 3rem;
     }
 
     .logo {
       max-width: 180px;
-      margin-bottom: 1.5rem;
-      filter: drop-shadow(0 10px 25px rgba(0,0,0,0.45));
+      margin: -80px auto 1rem; /* leve superposición con la franja */
+      display: block;
+      border-radius: 18px;
+      background: rgba(18,24,43,0.72);
+      padding: 10px;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.45);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
     }
 
     header h1 {
       font-size: clamp(2rem, 4vw, 3rem);
       margin-bottom: 1rem;
-      text-shadow: 0 10px 30px rgba(0,0,0,0.55);
     }
 
     header p {
-      color: #c9d0dc;
+      color: var(--muted);
       max-width: 750px;
       margin: 0 auto 2rem;
       font-size: 1.1rem;
-      text-shadow: 0 10px 30px rgba(0,0,0,0.55);
     }
 
     .btn {
@@ -204,9 +208,10 @@
     .whatsapp-float img { width: 32px; height: 32px; }
 
     @media (max-width: 480px) {
+      .hero-banner { height: 220px; }
+      .logo { margin-top: -70px; max-width: 160px; }
       footer { padding-bottom: 10rem; }
       .whatsapp-float { bottom: 140px; }
-      header.hero { padding: 3.2rem 1.2rem; }
     }
   </style>
 </head>
@@ -214,6 +219,8 @@
 <body>
 
 <header class="hero">
+  <div class="hero-banner" aria-hidden="true"></div>
+
   <div class="hero-inner">
     <img src="https://iili.io/f8IPat4.jpg" alt="Logo" class="logo">
     <h1>Impresión 3D y Personalizados a Pedido</h1>
